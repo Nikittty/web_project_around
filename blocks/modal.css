@@ -64,6 +64,7 @@
   height: 40px;
   top: -50px;
   right: -36px;
+  position: absolute;
   background-repeat: no-repeat;
   border: unset;
 }
