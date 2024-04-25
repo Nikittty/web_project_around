@@ -63,11 +63,10 @@
   width: 40px;
   height: 40px;
   top: -50px;
-  right: -36px;
+  right: -35px;
   position: absolute;
   background-color: transparent;
   background-repeat: no-repeat;
-  border: unset;
 }
 
 .modal__close:hover {
