@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Los encantos de Estados Unidos" />
+    <meta name="author" content="Josefina Nicole Medina" />
+    <meta name="keywords" content="Exploracion, Tripleten, USA" />
+    <title>Around The U.S</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="./images/Logo_White.png"
+          alt="Around The US Logo"
+          class="header__logo"
+        />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            src="./images/Profile.jpg"
+            alt="Fotografía de Josefina Nicole Medina"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <div class="profile__container">
+              <h1 class="profile__name">Josefina N. Medina</h1>
+              <button class="profile__button-edit"></button>
+            </div>
+            <p class="profile__about">Diseñadora</p>
+          </div>
+          <button class="profile__button-add"></button>
+        </section>
+
+        <section class="cards">
+          <div class="card">
+            <img
+              src="./images/Ouachita__Mountain.png"
+              alt="Montaña Ouachita"
+              class="card__image"
+            />
+            <h2 class="card__title">Ouachita</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+          <div class="card">
+            <img
+              src="./images/Lago_Louise.png"
+              alt="Lago Louise"
+              class="card__image"
+            />
+
+            <h2 class="card__title">Lake Louise</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+          <div class="card">
+            <img
+              src="./images/Montanas_Calvas.png"
+              alt="Montanas Calvas"
+              class="card__image"
+            />
+
+            <h2 class="card__title">Bald Mountains</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+          <div class="card">
+            <img src="./images/Forks.png" alt="Forks" class="card__image" />
+
+            <h2 class="card__title">Forks</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+          <div class="card">
+            <img
+              src="./images/Port_Angels.png"
+              alt="Port Angels"
+              class="card__image"
+            />
+
+            <h2 class="card__title">Port Angels</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+          <div class="card">
+            <img
+              src="./images/Leavenworth.png"
+              alt="Leavenworth"
+              class="card__image"
+            />
+
+            <h2 class="card__title">Leavenworth</h2>
+            <div class="card__button-like"></div>
+            <div class="card__button-delete"></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">&copy;2024 Josefina Nicole Medina</footer>
+    </div>
+    <div class="modal">
+      <div class="modal__content">
+        <div class="modal__close"></div>
+        <h2 class="modal__heading">Editar perfil</h2>
+        <form class="modal__form">
+          <input
+            type="text"
+            class="modal__input modal__input--name"
+            id="name"
+            placeholder="Nombre"
+          />
+          <input
+            type="text"
+            class="modal__input modal__input--about"
+            id="about"
+            placeholder="Acerca de mí"
+          />
+          <button type="submit" class="modal__submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
