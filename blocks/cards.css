@@ -48,6 +48,23 @@
   cursor: pointer;
 }
 
+.card__button-delete {
+  background-image: url("../images/Trash.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  position: absolute;
+  width: 21px;
+  height: 19px;
+  right: 18px;
+  bottom: 315px;
+}
+
+.card__button-delete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .cards {
     display: flex;
