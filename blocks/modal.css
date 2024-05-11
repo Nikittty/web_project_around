@@ -1,74 +1,201 @@
 .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000026;
+  align-items: center;
+  justify-content: center;
   display: none;
+  opacity: 0;
+  transition: background-color 0.3s ease;
+  visibility: hidden;
+}
+
+.modal_opened {
+  opacity: 1;
+  pointer-events: unset;
+  visibility: visible;
+  display: flex;
+}
+
+.modal__container {
+  background-color: #ffffff;
+  margin: auto;
+  max-width: 430px;
+  max-height: 330px;
+  border-radius: 10px;
+  padding: 34px 36px;
+  place-items: center;
+  display: flex;
+  position: relative;
+}
+
+.modal__form {
+  margin-left: 36px;
+}
+
+.modal__close-button {
+  background-image: url(../images/Close_Icon.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+  position: absolute;
+  top: -40px;
+  left: 100%;
+  background-color: #00000026;
+}
+
+.modal__close-button:hover {
+  opacity: 0.6;
+}
+
+.modal__title {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 54px;
+}
+
+.modal__input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 30px;
+  width: 358px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.modal__input_about {
+  margin-bottom: 48px;
+}
+
+.modal__save-button {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid;
+  display: inline-block;
+  transition: background-color 0.3s;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  width: 358px;
+  height: 50.15px;
+  border-radius: 2px;
+  margin-top: 0;
+}
+
+.modal__save-button:hover {
+  opacity: 0.6;
+}
+
+.modal__content-image {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 433px;
+  max-height: 540px;
+}
+
+.modal__close-button-image {
+  background-image: url(../images/Close_Icon.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: none;
+  position: absolute;
+  top: -30px;
+  right: -20px;
+  background-color: transparent;
+}
+
+.modal__close-button-image:hover {
+  opacity: 0.6;
+}
+
+.modal__image {
+  width: 433px;
+  height: 540px;
+}
+
+.modal__image-title {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+}
+
+.modal__button_disabled {
+  background-color: white;
+  color: #cccccc;
+  pointer-events: none;
+}
+
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.modal_open {
-  display: block;
+@media screen and (max-width: 768px) {
+  .modal__container {
+    padding: 25px 22px;
+    width: 238px;
+  }
+  .modal__form {
+    margin-left: 0px;
+  }
+
+  .modal__close-button {
+    width: 26px;
+    height: 26px;
+  }
+  .modal__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 75px;
+  }
+  .modal__input {
+    width: 238px;
+  }
+  .modal__save-button {
+    width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .modal__image {
+    width: 240px;
+    height: 299px;
+    margin-top: 0;
+  }
+  .modal__image-title {
+    margin-top: 10px;
+    margin-right: 60px;
+  }
 }
 
-.modal__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 430px;
-  width: 80%;
-}
-
-.modal__heading {
-  font-size: 1.125rem;
-  margin: 0;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: black;
-}
-
-.modal__input {
-  margin-top: 8px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  width: 100%;
-  height: 50px;
-  border: none;
-  border-bottom: 1px solid #545454;
-  padding: 0;
-}
-
-.modal__submit {
-  width: 100%;
-  background-color: #000;
-  color: #fff;
-  height: 60px;
-  border: none;
-  border-radius: 4px;
-  margin-top: 40px;
-}
-
-.modal__submit:hover {
-  background-color: #0056b3;
-}
-
-.modal__close {
-  background-image: url("../images/Close_Icon.png");
-  width: 40px;
-  height: 40px;
-  top: -50px;
-  right: -35px;
-  position: absolute;
-  background-color: transparent;
-  background-repeat: no-repeat;
-}
-
-.modal__close:hover {
-  opacity: 0.6;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal__close-button {
+    top: 430px;
+    left: 720px;
+  }
 }

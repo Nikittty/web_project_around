@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border-bottom: 1px solid #545454;
+  border-bottom: 2px solid #545454;
   padding-bottom: 41px;
   width: 100%;
   max-width: 1280px;
@@ -12,4 +12,15 @@
 .header__logo {
   max-width: 173px;
   max-height: 33px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 320px;
+    margin: 26px 0 0 27px;
+  }
+  .header__logo {
+    max-width: 126px;
+    max-height: 24px;
+  }
 }

@@ -23,107 +23,112 @@
       <main class="content">
         <section class="profile">
           <img
-            src="./images/Profile.jpg"
+            src="./images/Profile.png"
             alt="Fotografía de Josefina Nicole Medina"
             class="profile__image"
           />
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Josefina Medina</h1>
-              <button class="profile__button-edit"></button>
+              <button class="profile__edit-button"></button>
             </div>
             <p class="profile__about">Diseñadora</p>
           </div>
-          <button class="profile__button-add"></button>
+          <button class="profile__add-button"></button>
         </section>
-
-        <section class="cards">
-          <div class="card">
-            <img
-              src="./images/Ouachita__Mountain.png"
-              alt="Montaña Ouachita"
-              class="card__image"
-            />
-            <h2 class="card__title">Ouachita</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/Lago_Louise.png"
-              alt="Lago Louise"
-              class="card__image"
-            />
-
-            <h2 class="card__title">Lake Louise</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/Montanas_Calvas.png"
-              alt="Montanas Calvas"
-              class="card__image"
-            />
-
-            <h2 class="card__title">Bald Mountains</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-          <div class="card">
-            <img src="./images/Forks.png" alt="Forks" class="card__image" />
-
-            <h2 class="card__title">Forks</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/Port_Angels.png"
-              alt="Port Angels"
-              class="card__image"
-            />
-
-            <h2 class="card__title">Port Angels</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/Leavenworth.png"
-              alt="Leavenworth"
-              class="card__image"
-            />
-
-            <h2 class="card__title">Leavenworth</h2>
-            <div class="card__button-like"></div>
-            <div class="card__button-delete"></div>
-          </div>
-        </section>
+        <div class="cards"></div>
       </main>
       <footer class="footer">&copy;2024 Josefina Nicole Medina</footer>
     </div>
-    <div class="modal">
-      <div class="modal__content">
-        <div class="modal__close"></div>
-        <h2 class="modal__heading">Editar perfil</h2>
-        <form class="modal__form">
+
+    <!-----------MODAL--------------->
+    <section class="modal" id="edit-profile-modal">
+      <div class="modal__overlay" id="modal-overlay-edit"></div>
+      <div class="modal__container" id="modal-edit">
+        <form class="modal__form" novalidate>
+          <button class="modal__close-button"></button>
+          <h2 class="modal__title">Editar Perfil</h2>
           <input
+            class="modal__input modal__input_name"
             type="text"
-            class="modal__input modal__input-name"
-            id="name"
-            placeholder="Nombre"
+            id="modal__input_name"
+            minlength="2"
+            maxlength="40"
+            placeholder="Name"
+            required
           />
+          <p></p>
           <input
+            class="modal__input modal__input_about"
             type="text"
-            class="modal__input modal__input-about"
-            id="about"
-            placeholder="Acerca de mí"
+            id="modal__input_about"
+            minlength="2"
+            maxlength="200"
+            placeholder="Profession"
+            required
           />
-          <button type="submit" class="modal__submit">Guardar</button>
+          <button class="modal__save-button" type="submit">Guardar</button>
         </form>
       </div>
+    </section>
+
+    <section class="modal" id="add-image-modal">
+      <div class="modal__overlay" id="modal-overlay-add"></div>
+      <div class="modal__container" id="modal-add">
+        <form class="modal__form" novalidate>
+          <button
+            class="modal__close-button"
+            id="modal__close-button-card"
+          ></button>
+          <h2 class="modal__title">Nuevo lugar</h2>
+          <input
+            class="modal__input modal__input_title"
+            type="text"
+            id="modal__input_title"
+            minlength="2"
+            maxlength="30"
+            placeholder="Titulo"
+            required
+          />
+          <span class="modal__error" id="modal__input_title-error"></span>
+          <input
+            class="modal__input modal__input_about"
+            type="url"
+            id="modal__input_image"
+            minlength="2"
+            placeholder="Enlace a la imagen"
+            required
+          />
+          <button class="modal__save-button" type="submit">Crear</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="modal" id="modal_image-open">
+      <div class="modal__overlay" id="modal-overlay-image"></div>
+      <div class="modal__content-image">
+        <button
+          class="modal__close-button-image"
+          id="modal__close-image"
+        ></button>
+        <img class="modal__image" src="." alt="" />
+        <h2 class="modal__image-title"></h2>
+      </div>
     </div>
+
+    <!-----------CARD TEMPLATE---------------------->
+    <template class="template-card">
+      <div class="card">
+        <img class="card__photo" />
+        <div class="card__info">
+          <p class="card__info-name"></p>
+          <button class="card__like-button"></button>
+          <button class="card__delete-button"></button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Script JavaScript -->
     <script src="./script/script.js"></script>
   </body>
 </html>
