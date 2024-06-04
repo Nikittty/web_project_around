@@ -166,15 +166,16 @@ function handleAddCardSubmit(evt) {
   closeAddImageModal();
 }
 
-// Función para cerrar la modal de imagen
+// Función para cerrar el modal de imagen
 function handleCloseImage() {
   modalImageOpen.classList.remove("modal_opened");
   overlayImage.removeEventListener("click", handleOverlayClick);
 }
 
-// Función para abrir la modal de imagen
+// Función para abrir el modal de imagen
 function handleOpenImage(title, link) {
   modalImage.src = link;
+  modalImage.alt = title; // Actualiza el atributo alt con el título
   modalImageTitle.textContent = title;
   modalImageOpen.classList.add("modal_opened");
   closeImage.addEventListener("click", handleCloseImage);
