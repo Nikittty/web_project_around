@@ -1,4 +1,4 @@
-//Popup editar perfil
+// Elementos de perfil
 const profileNameElement = document.querySelector(".profile__name");
 const profileAboutElement = document.querySelector(".profile__about");
 
@@ -6,26 +6,27 @@ const profileName = profileNameElement.textContent;
 const profileAbout = profileAboutElement.textContent;
 
 const profileEditButton = document.querySelector(".profile__edit-button");
-const editPopupElement = document.querySelector(".popup");
+const editModalElement = document.querySelector(".modal");
 
-const formElement = document.querySelector(".popup__form");
-const nameInput = document.querySelector(".popup__input_name");
-const aboutInput = document.querySelector(".popup__input_about");
-const closeButtonPopup = document.querySelector(".popup__close-button");
+const formElement = document.querySelector(".modal__form");
+const nameInput = document.querySelector(".modal__input_name");
+const aboutInput = document.querySelector(".modal__input_about");
+const closeButtonModal = document.querySelector(".modal__close-button");
 
-//Popup agregar imagenes
+// Elementos de agregar imagen
 const profileAddButton = document.querySelector(".profile__add-button");
-const addImagePopupElement = document.querySelector("#add-image-popup");
-const titleInput = document.querySelector(".popup__input_title");
-const imageInput = document.querySelector("#popup__input_image");
+const addImageModalElement = document.querySelector("#add-image-modal");
+const titleInput = document.querySelector(".modal__input_title");
+const imageInput = document.querySelector("#modal__input_image");
 
-//Template cards
-const templateCard = document.querySelector(".template-card");
+// Elementos de plantilla de tarjeta
+const cardTemplate = document.querySelector(".template-card");
 const cardArea = document.querySelector(".cards");
 
-const groupImage = document.getElementById("add-image-popup");
-const formCard = groupImage.querySelector(".popup__form");
+const groupImage = document.getElementById("add-image-modal");
+const formCard = groupImage.querySelector(".modal__form");
 
+// Tarjetas iniciales
 const initialCards = [
   {
     name: "Forks",
@@ -53,75 +54,83 @@ const initialCards = [
   },
 ];
 
-//Popup imagenes
-const popupImageOpen = document.querySelector("#popup_image-open");
-const closeImage = document.querySelector("#popup__close-image");
-const popupImageTitle = document.querySelector(".popup__image-title");
-const popupImage = document.querySelector(".popup__image");
+// Elementos del modal de imagen
+const modalImageOpen = document.querySelector("#modal_image-open");
+const closeImage = document.querySelector("#modal__close-image");
+const modalImageTitle = document.querySelector(".modal__image-title");
+const modalImage = document.querySelector(".modal__image");
 
+// Variables de perfil inicial
 let initialProfileName = profileName;
 let initialProfileAbout = profileAbout;
 
-//Overlays
-const overlayEdit = document.querySelector("#popup-overlay-edit");
-const overlayAdd = document.querySelector("#popup-overlay-add");
-const overlayImage = document.querySelector("#popup-overlay-image");
+// Overlays
+const overlayEdit = document.querySelector("#modal-overlay-edit");
+const overlayAdd = document.querySelector("#modal-overlay-add");
+const overlayImage = document.querySelector("#modal-overlay-image");
 
-//Popup editar perfil
-function setPopupInput() {
+// Función para establecer los valores de entrada del modal
+function setModalInput() {
   nameInput.value = initialProfileName;
   aboutInput.value = initialProfileAbout;
 }
 
-function openPopup() {
-  editPopupElement.classList.add("popup_opened");
+// Función para abrir el modal
+function openModal() {
+  editModalElement.classList.add("modal_opened");
   overlayEdit.addEventListener("click", handleOverlayClick);
 }
 
-function handlePopupClick(event) {
-  setPopupInput();
-  openPopup();
+// Manejador de eventos para abrir el modal
+function handleModalClick(event) {
+  setModalInput();
+  openModal();
 }
 
-function closePopup() {
-  editPopupElement.classList.remove("popup_opened");
+// Función para cerrar el modal
+function closeModal() {
+  editModalElement.classList.remove("modal_opened");
   overlayEdit.removeEventListener("click", handleOverlayClick);
 }
 
+// Manejador de eventos para enviar el formulario del perfil
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = nameInput.value;
   profileAboutElement.textContent = aboutInput.value;
   initialProfileName = nameInput.value;
   initialProfileAbout = aboutInput.value;
-  closePopup();
+  closeModal();
 }
 
-//Popup agregar imagenes
-function openAddImagePopup() {
-  addImagePopupElement.classList.add("popup_opened");
+// Función para abrir el modal de agregar imagen
+function openAddImageModal() {
+  addImageModalElement.classList.add("modal_opened");
   overlayAdd.addEventListener("click", handleOverlayClick);
 }
 
+// Manejador de eventos para abrir el modal de agregar imagen
 function handleAddImageClick(event) {
-  openAddImagePopup();
+  openAddImageModal();
 }
 
-function closeAddImagePopup() {
-  addImagePopupElement.classList.remove("popup_opened");
+// Función para cerrar el modal de agregar imagen
+function closeAddImageModal() {
+  addImageModalElement.classList.remove("modal_opened");
   overlayAdd.removeEventListener("click", handleOverlayClick);
 }
 
+// Manejador de eventos para enviar el formulario de agregar imagen
 function handleAddImageFormSubmit(evt) {
   evt.preventDefault();
   const newImageTitle = titleInput.value;
   const newImageUrl = imageInput.value;
-  closeAddImagePopup();
+  closeAddImageModal();
 }
 
-//Template cards
+// Función para generar una tarjeta
 function cardGenerator(title, link) {
-  const card = templateCard.cloneNode(true).content.querySelector(".card");
+  const card = cardTemplate.cloneNode(true).content.querySelector(".card");
   const cardImage = card.querySelector(".card__photo");
   const cardTitle = card.querySelector(".card__info-name");
   const likeButton = card.querySelector(".card__like-button");
@@ -141,66 +150,71 @@ function cardGenerator(title, link) {
   return card;
 }
 
+// Generar tarjetas iniciales
 initialCards.forEach(function (element) {
   const newCard = cardGenerator(element.name, element.link);
   cardArea.append(newCard);
 });
 
+// Manejador de eventos para enviar el formulario de agregar tarjeta
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  if (evt.submitter.classList.contains("popup__save-button")) {
+  if (evt.submitter.classList.contains("modal__save-button")) {
     const newCard = cardGenerator(titleInput.value, imageInput.value);
     cardArea.prepend(newCard);
   }
-  closeAddImagePopup();
+  closeAddImageModal();
 }
 
-//Popup imagenes
+// Función para cerrar el modal de imagen
 function handleCloseImage() {
-  popupImageOpen.classList.remove("popup_opened");
+  modalImageOpen.classList.remove("modal_opened");
   overlayImage.removeEventListener("click", handleOverlayClick);
 }
 
+// Función para abrir el modal de imagen
 function handleOpenImage(title, link) {
-  popupImage.src = link;
-  popupImageTitle.textContent = title;
-  popupImageOpen.classList.add("popup_opened");
+  modalImage.src = link;
+  modalImage.alt = title; // Actualiza el atributo alt con el título
+  modalImageTitle.textContent = title;
+  modalImageOpen.classList.add("modal_opened");
   closeImage.addEventListener("click", handleCloseImage);
   overlayImage.addEventListener("click", handleOverlayClick);
 }
 
-//Overlays
+// Función para manejar el clic en el overlay
 function handleOverlayClick(event) {
-  if (event.target.classList.contains("popup__overlay")) {
-    closePopup();
-    closeAddImagePopup();
+  if (event.target.classList.contains("modal__overlay")) {
+    closeModal();
+    closeAddImageModal();
     handleCloseImage();
   }
 }
 
+// Función para cerrar con la tecla "Escape"
 function closeWithEsc(event) {
   if (event.key === "Escape") {
-    closePopup();
-    closeAddImagePopup();
+    closeModal();
+    closeAddImageModal();
     handleCloseImage();
   }
 }
 
-//Eventos abrir y cerrar
-profileEditButton.addEventListener("click", handlePopupClick);
+// Event listeners
+profileEditButton.addEventListener("click", handleModalClick);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
 profileAddButton.addEventListener("click", handleAddImageClick);
 formCard.addEventListener("submit", handleAddCardSubmit);
 
-addImagePopupElement
-  .querySelector(".popup__close-button")
-  .addEventListener("click", closeAddImagePopup);
-addImagePopupElement
-  .querySelector(".popup__form")
+addImageModalElement
+  .querySelector(".modal__close-button")
+  .addEventListener("click", closeAddImageModal);
+addImageModalElement
+  .querySelector(".modal__form")
   .addEventListener("submit", handleAddImageFormSubmit);
 
-// Event listeners for overlay clicks
+// Event listeners para clics en overlay
 overlayEdit.addEventListener("click", handleOverlayClick);
 overlayAdd.addEventListener("click", handleOverlayClick);
 overlayImage.addEventListener("click", handleOverlayClick);

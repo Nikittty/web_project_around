@@ -1,4 +1,4 @@
-.popup {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,14 +13,14 @@
   visibility: hidden;
 }
 
-.popup_opened {
+.modal_opened {
   opacity: 1;
   pointer-events: unset;
   visibility: visible;
   display: flex;
 }
 
-.popup__container {
+.modal__container {
   background-color: #ffffff;
   margin: auto;
   max-width: 430px;
@@ -32,11 +32,11 @@
   position: relative;
 }
 
-.popup__form {
+.modal__form {
   margin-left: 36px;
 }
 
-.popup__close-button {
+.modal__close-button {
   background-image: url(../images/Close_Icon.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -51,11 +51,11 @@
   background-color: #00000026;
 }
 
-.popup__close-button:hover {
+.modal__close-button:hover {
   opacity: 0.6;
 }
 
-.popup__title {
+.modal__title {
   font-size: 24px;
   font-weight: 900;
   line-height: 29px;
@@ -64,7 +64,7 @@
   margin-bottom: 54px;
 }
 
-.popup__input {
+.modal__input {
   border: none;
   border-bottom: 1px solid #000000;
   margin-bottom: 30px;
@@ -75,15 +75,11 @@
   line-height: 17px;
 }
 
-.popup__input:invalid {
-  border-bottom: 1px solid red;
-}
-
-.popup__input_about {
+.modal__input_about {
   margin-bottom: 48px;
 }
 
-.popup__save-button {
+.modal__save-button {
   text-decoration: none;
   color: #ffffff;
   background-color: #000000;
@@ -99,11 +95,11 @@
   margin-top: 0;
 }
 
-.popup__save-button:hover {
+.modal__save-button:hover {
   opacity: 0.6;
 }
 
-.popup__content-image {
+.modal__content-image {
   position: relative;
   margin: auto;
   display: flex;
@@ -112,7 +108,7 @@
   max-height: 540px;
 }
 
-.popup__close-button-image {
+.modal__close-button-image {
   background-image: url(../images/Close_Icon.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -127,16 +123,16 @@
   background-color: transparent;
 }
 
-.popup__close-button-image:hover {
+.modal__close-button-image:hover {
   opacity: 0.6;
 }
 
-.popup__image {
+.modal__image {
   width: 433px;
   height: 540px;
 }
 
-.popup__image-title {
+.modal__image-title {
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
@@ -144,21 +140,29 @@
   text-align: left;
 }
 
-.popup__error {
-  color: red;
-}
-
-.popup__input_type_error {
-  border-bottom: red 1px solid;
-}
-
-.popup__button_disabled {
-  background-color: white;
-  color: #cccccc;
+/* Added styles for error and disabled button states */
+.modal__button_disabled {
+  background-color: #cccccc;
+  color: #ffffff;
   pointer-events: none;
 }
 
-.popup__overlay {
+.modal__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.modal__error {
+  font-size: 12px;
+  color: red;
+  margin: 0;
+  display: none;
+}
+
+.modal__error_visible {
+  display: block;
+}
+
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -168,45 +172,45 @@
 }
 
 @media screen and (max-width: 768px) {
-  .popup__container {
+  .modal__container {
     padding: 25px 22px;
     width: 238px;
   }
-  .popup__form {
+  .modal__form {
     margin-left: 0px;
   }
 
-  .popup__close-button {
+  .modal__close-button {
     width: 26px;
     height: 26px;
   }
-  .popup__title {
+  .modal__title {
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 75px;
   }
-  .popup__input {
+  .modal__input {
     width: 238px;
   }
-  .popup__save-button {
+  .modal__save-button {
     width: 238px;
     height: 46px;
     font-size: 14px;
     line-height: 17px;
   }
-  .popup__image {
+  .modal__image {
     width: 240px;
     height: 299px;
     margin-top: 0;
   }
-  .popup__image-title {
+  .modal__image-title {
     margin-top: 10px;
     margin-right: 60px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .popup__close-button {
+  .modal__close-button {
     top: 430px;
     left: 720px;
   }
