@@ -47,8 +47,13 @@ profileEditButton.addEventListener("click", () => {
   aboutInput.value = userData.job;
   editProfilePopup.open();
 });
+profileEditButton.addEventListener("click", () => {
+  const userData = userInfo.getUserInfo();
+  nameInput.value = userData.name;
+  aboutInput.value = userData.job;
+  editProfilePopup.open();
+});
 
-// Formulario para agregar una nueva tarjeta
 const addCardPopup = new PopupWithForm("#add-image-modal", (formData) => {
   const newCard = new Card(
     { name: formData.title, link: formData.image },
@@ -65,8 +70,30 @@ profileAddButton.addEventListener("click", () => addCardPopup.open());
 const section = new Section(
   {
     items: [
-      { name: "Forks", link: "https://images.unsplash.com/photo-1495439043526-adbb78cc5972" },
-      { name: "Pennsylvania", link: "https://images.unsplash.com/photo-1603403452056-8606c747a06a" }
+      {
+        name: "Forks",
+        link: "https://images.unsplash.com/photo-1495439043526-adbb78cc5972?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "Pennsylvania",
+        link: "https://images.unsplash.com/photo-1603403452056-8606c747a06a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "New Orleans",
+        link: "https://images.unsplash.com/photo-1571893544028-06b07af6dade?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "Boston",
+        link: "https://images.unsplash.com/photo-1609649820825-b0595212a8d4?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "Brooklyn Bridge",
+        link: "https://images.unsplash.com/photo-1559364435-0d00a3a6f55d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      {
+        name: "Cleveland",
+        link: "https://images.unsplash.com/photo-1604448446634-6afe5d3882c5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      }
     ],
     renderer: (item) => {
       const card = new Card(item, cardTemplateSelector, (name, link) => imagePopup.open(name, link));
