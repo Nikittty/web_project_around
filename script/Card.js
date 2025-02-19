@@ -1,9 +1,9 @@
-// Card.js
 class Card {
-  constructor({ name, link }, templateSelector) {
+  constructor({ name, link }, templateSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -24,28 +24,10 @@ class Card {
     this._element = null;
   }
 
-  _handleOpenImage() {
-    const modalImage = document.querySelector(".modal__image");
-    const modalImageTitle = document.querySelector(".modal__image-title");
-    const modalImageOpen = document.querySelector("#modal_image-open");
-
-    modalImage.src = this._link;
-    modalImage.alt = this._name;
-    modalImageTitle.textContent = this._name;
-    modalImageOpen.classList.add("modal_opened");
-
-    const closeImage = document.querySelector("#modal__close-image");
-    closeImage.addEventListener("click", () => {
-      modalImageOpen.classList.remove("modal_opened");
-    });
-  }
-
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => this._handleLikeButton());
-    this._deleteButton.addEventListener("click", () =>
-      this._handleDeleteButton()
-    );
-    this._cardImage.addEventListener("click", () => this._handleOpenImage());
+    this._deleteButton.addEventListener("click", () => this._handleDeleteButton());
+    this._cardImage.addEventListener("click", () => this._handleCardClick(this._name, this._link));
   }
 
   generateCard() {
