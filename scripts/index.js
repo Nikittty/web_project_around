@@ -168,9 +168,9 @@ api
       (cardElement) => {
         deletePopup.open(() => {
           api
-            .removeCard(cardId) // Llamamos a la API con el ID de la tarjeta
+            .removeCard(cardId)
             .then(() => {
-              cardElement.remove(); // Eliminamos la tarjeta del DOM si la API responde correctamente
+              cardElement.remove();
               deletePopup.close();
             })
             .catch((err) => console.error("Error al eliminar tarjeta:", err));
