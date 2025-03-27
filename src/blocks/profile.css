@@ -40,7 +40,7 @@
   height: 20px;
 }
 
-
+/* Mostrar el botón al pasar el mouse */
 .profile__avatar-container:hover .profile__edit-avatar {
   opacity: 1;
 }
@@ -93,7 +93,7 @@
   width: 120px;
 }
 
-.profile__button-edit {
+.profile__Edit_Button {
   margin: 0px;
   background: none;
   border: none;
@@ -105,11 +105,11 @@
   margin-top: -10px;
 }
 
-.profile__button-edit img {
+.profile__Edit_Button img {
   width: 24px;
 }
 
-.profile__button-add {
+.profile__Add_Button {
   background: none;
   border: none;
   padding: 0;
@@ -121,7 +121,7 @@
   max-height: 150;
 }
 
-.profile__button-add img {
+.profile__Add_Button img {
   /* Propiedades agregadas para ajustar el diseño */
   display: block;
   max-width: 100%;
@@ -133,7 +133,7 @@
   .profile {
     width: 85vw;
   }
-  .profile__button-add {
+  .profile__Add_Button {
     max-width: 100px;
     width: 100%;
   }
@@ -184,7 +184,7 @@
     margin: 0px;
   }
   .profile__content {
-    align-items: center;
+    align-items: center; /* Ajuste para centrar el contenido */
     justify-content: center;
   }
 
@@ -201,18 +201,18 @@
     align-items: center;
   }
 
-  .profile__button-edit {
+  .profile__Edit_Button {
     width: 18px;
-    height: 18px;
+    height: 18px; /* Añadido para mantener proporciones */
     margin-top: -30px;
   }
 
-  .profile__button-add {
+  .profile__Add_Button {
     max-width: 282px;
     width: 100%;
   }
 
-  .profile__button-add img {
+  .profile__Add_Button img {
     width: 100%;
     height: 50px;
     border-radius: 2px;

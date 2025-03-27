@@ -1,11 +1,9 @@
 .header {
-  background-color: black;
   max-width: 880px;
   width: 100%;
-  min-height: 100px;
+  max-height: 100%;
   margin: 45px auto 40px auto;
   padding: 0px;
-  overflow: hidden;
 }
 
 .header__logo {
@@ -16,7 +14,7 @@
   margin-left: 27px;
 }
 
-
+/* Media query para pantallas entre 501px y 768px */
 @media (min-width: 501px) and (max-width: 768px) {
   .header {
     width: 100%;
@@ -31,7 +29,7 @@
   }
 }
 
-
+/*Media query para pantalla 320px*/
 @media (max-width: 500px) {
   .header {
     border: 0px 0px 1px 0px;

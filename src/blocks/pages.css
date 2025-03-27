@@ -2,12 +2,12 @@ body {
   background-color: #000000;
   margin: 0;
   padding: 0;
-  text-rendering: optimizelegibility;
 }
 
-.pages {
+.page {
   margin: auto;
   font-family: "Inter", Arial, sans-serif;
+  font-size: 16px;
   line-height: 20px;
   color: white;
   max-width: 1600px;

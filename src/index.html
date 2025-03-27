@@ -7,11 +7,11 @@
     <meta name="author" content="Josefina Nicole Medina" />
     <meta name="keywords" content="Exploracion, Tripleten, USA" />
     <title>Around The U.S</title>
-    <link rel="stylesheet" href="/src/pages/index.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body>
-    <div class="pages">
+    <div class="page">
       <header class="header">
         <img src="./images/logo.png" alt="Logo del sitio Around the U.S" class="header__logo" />
       </header>
@@ -27,18 +27,17 @@
             <p class="profile__name"></p>
             <p class="profile__hobbie"></p>
           </div>
-          <button class="profile__button-edit" aria-label="Editar perfil">
+          <button class="profile__Edit_Button" aria-label="Editar perfil">
             <img src="./images/Edit_Button.png" alt="Botón para modificar la información personal" />
           </button>
         </div>
-        <button class="profile__button-add" aria-label="Agregar nueva tarjeta">
+        <button class="profile__Add_Button" aria-label="Agregar nueva tarjeta">
           <img src="./images/Add_Button.png" alt="Botón para añadir una nueva imagen" />
         </button>
       </section>
       <main class="main">
-        <div class="elements">
         <div class="elements__container"></div>
-        <template class="elements__template" id="template__card">
+        <template class="template__card" id="template__card">
           <div class="element">
             <button class="element__photo-Trash"></button>
             <img src="" alt="" class="element__photo-link" />
@@ -47,7 +46,6 @@
               <button class="element__photo-like"></button>
             </div>
           </div>
-          </div>
         </template>
       </main>
       <footer class="footer">
@@ -55,7 +53,7 @@
       </footer>
     </div>
 
-    <!-- Popup para agrandar una imagen -->
+
     <div class="popup" id="popup-show-card">
       <div class="popup__overlay"></div>
       <div class="popup__photo-content">
@@ -65,7 +63,7 @@
       </div>
     </div>
 
-    <!-- Popup para agregar una nueva tarjeta -->
+
     <div class="popup" id="popup-add-card">
       <div class="popup__overlay"></div>
       <form class="form popup__form" id="form-addCard" novalidate>
@@ -79,7 +77,7 @@
       </form>
     </div>
 
-    <!-- Popup para editar perfil -->
+
     <div class="popup" id="popup-profile">
       <div class="popup__overlay"></div>
       <form class="form popup__form" id="form-profile" novalidate>
@@ -93,7 +91,7 @@
       </form>
     </div>
 
-    <!-- Popup de confirmación para eliminar una tarjeta -->
+
     <div class="popup" id="popup-delete">
       <div class="popup__overlay"></div>
       <form class="form popup__form" id="form-delete" novalidate>
@@ -103,7 +101,7 @@
       </form>
     </div>
 
-    <!-- Popup para cambiar la foto de perfil -->
+
     <div class="popup" id="popup-avatar">
       <div class="popup__overlay"></div>
       <form class="form popup__form" id="form-avatar" novalidate>
@@ -114,6 +112,6 @@
       </form>
     </div>
 
-    <script src="/src/pages/index.js" type="module"></script>
+    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>
