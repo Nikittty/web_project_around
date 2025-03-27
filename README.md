@@ -1,4 +1,4 @@
-**Nombre del Proyecto:** Around The U.S
+**Nombre del Proyecto:** Around The U.S.
 
 **Desarrollado por:** Josefina Nicole Medina
 
