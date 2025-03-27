@@ -1,8 +1,19 @@
-@import url(../vendor/normalize.css);
-@import url(../vendor/fonts/fonts.css);
-@import url(../blocks/page.css);
-@import url(../blocks/header.css);
-@import url(../blocks/profile.css);
-@import url(../blocks/cards.css);
-@import url(../blocks/footer.css);
-@import url(../blocks/modal.css);
+@import url("../vendor/normalize.css");
+@import url("../fonts/inter.css");
+@import url("../blocks/footer.css");
+@import url("../blocks/header.css");
+@import url("../blocks/pages.css");
+@import url("../blocks/profile.css");
+@import url("../blocks/elements.css");
+@import url("../blocks/popup__profile.css");
+@import url("../blocks/popup__card-add.css");
+@import url("../blocks/popup_card.css");
+
+* {
+  margin: 0;
+}
+
+main {
+  background-color: black;
+  color: white;
+}

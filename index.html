@@ -13,125 +13,107 @@
   <body>
     <div class="page">
       <header class="header">
-        <img
-          src="./images/Logo_White.png"
-          alt="Around The US Logo"
-          class="header__logo"
-        />
+        <img src="./images/logo.png" alt="Logo del sitio Around the U.S" class="header__logo" />
       </header>
-
-      <main class="content">
-        <section class="profile">
-          <img
-            src="./images/Profile.png"
-            alt="Fotografía de Josefina Nicole Medina"
-            class="profile__image"
-          />
-          <div class="profile__info">
-            <div class="profile__container">
-              <h1 class="profile__name">Josefina Medina</h1>
-              <button class="profile__edit-button"></button>
-            </div>
-            <p class="profile__about">Diseñadora</p>
-          </div>
-          <button class="profile__add-button"></button>
-        </section>
-        <div class="cards"></div>
-      </main>
-      <footer class="footer">&copy;2024 Josefina Nicole Medina</footer>
-    </div>
-
-    <section class="modal" id="edit-profile-modal">
-      <div class="modal__overlay" id="modal-overlay-edit"></div>
-      <div class="modal__container" id="modal-edit">
-        <form class="modal__form" required>
-          <button class="modal__close-button"></button>
-          <h2 class="modal__title">Editar perfil</h2>
-          <input
-            class="modal__input modal__input_name"
-            type="text"
-            id="modal__input_name"
-            name="name"
-            minlength="2"
-            maxlength="40"
-            placeholder="Nombre"
-            required
-          />
-          <span class="modal__error" id="modal__input_name-error"></span>
-          <input
-            class="modal__input modal__input_about"
-            type="text"
-            id="modal__input_about"
-            name="job"
-            minlength="2"
-            maxlength="200"
-            placeholder="Profesión"
-            required
-          />
-          <span class="modal__error" id="modal__input_about-error"></span>
-          <button class="modal__save-button" type="submit">Guardar</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="modal" id="add-image-modal">
-      <div class="modal__overlay" id="modal-overlay-add"></div>
-      <div class="modal__container" id="modal-add">
-        <form class="modal__form" required>
-          <button
-            class="modal__close-button"
-            id="modal__close-button-card"
-          ></button>
-          <h2 class="modal__title">Nuevo lugar</h2>
-          <input
-            class="modal__input modal__input_title"
-            type="text"
-            id="modal__input_title"
-            name="title"
-            minlength="2"
-            maxlength="30"
-            placeholder="Título"
-            required
-          />
-          <span class="modal__error" id="modal__input_title-error"></span>
-          <input
-            class="modal__input modal__input_about"
-            type="url"
-            id="modal__input_image"
-            name="image"
-            minlength="2"
-            placeholder="Enlace a la imagen"
-            required
-          />
-          <span class="modal__error" id="modal__input_image-error"></span>
-          <button class="modal__save-button" type="submit">Crear</button>
-        </form>
-      </div>
-    </section>
-
-    <div class="modal" id="modal_image-open">
-      <div class="modal__overlay" id="modal-overlay-image"></div>
-      <div class="modal__content-image">
-        <button
-          class="modal__close-button-image"
-          id="modal__close-image"
-        ></button>
-        <img class="modal__image" src="." alt="" />
-        <h2 class="modal__image-title"></h2>
-      </div>
-    </div>
-
-    <template class="template-card">
-      <div class="card">
-        <img class="card__photo" />
-        <div class="card__info">
-          <p class="card__info-name"></p>
-          <button class="card__like-button"></button>
-          <button class="card__delete-button"></button>
+      <section class="profile">
+        <div class="profile__avatar-container">
+          <img class="profile__avatar" src=" " alt="Foto de perfil" />
+          <button class="profile__edit-avatar" aria-label="Editar foto de perfil">
+            <img src="./images/edit_avatar.png" alt="Botón para cambiar la foto de perfil" />
+          </button>
         </div>
-      </div>
-    </template>
+        <div class="profile__content">
+          <div class="profile__info">
+            <p class="profile__name"></p>
+            <p class="profile__hobbie"></p>
+          </div>
+          <button class="profile__button-edit" aria-label="Editar perfil">
+            <img src="./images/Edit_Button.png" alt="Botón para modificar la información personal" />
+          </button>
+        </div>
+        <button class="profile__button-add" aria-label="Agregar nueva tarjeta">
+          <img src="./images/Add_Button.png" alt="Botón para añadir una nueva imagen" />
+        </button>
+      </section>
+      <main class="main">
+        <div class="elements">
+        <div class="elements__container"></div>
+        <template class="elements__template" id="template__card">
+          <div class="element">
+            <button class="element__photo-Trash"></button>
+            <img src="" alt="" class="element__photo-link" />
+            <div class="element__info">
+              <h2 class="element__photo-name"></h2>
+              <button class="element__photo-like"></button>
+            </div>
+          </div>
+          </div>
+        </template>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy;2024 Josefina Nicole Medina</p>
+      </footer>
+    </div>
 
-    <script type="module" src="./script/index.js"></script>
+    <!-- Popup para agrandar una imagen -->
+    <div class="popup" id="popup-show-card">
+      <div class="popup__overlay"></div>
+      <div class="popup__photo-content">
+        <img class="popup__close" src="./images/Close_Icon.png" alt="Cerrar ventana emergente" id="popup-close-card" required />
+        <img src=" " alt="" class="popup__photo-link" />
+        <h3 class="popup__photo-name"></h3>
+      </div>
+    </div>
+
+    <!-- Popup para agregar una nueva tarjeta -->
+    <div class="popup" id="popup-add-card">
+      <div class="popup__overlay"></div>
+      <form class="form popup__form" id="form-addCard" novalidate>
+        <img class="popup__close" src="./images/Close_Icon.png" alt="Cerrar ventana" id="close-form" required />
+        <h2 class="form__title">Nueva Tarjeta</h2>
+        <input class="form__input" type="text" id="input-card-name" placeholder="Título" minlength="2" maxlength="30" name="name" required />
+        <span class="input-error input-card-name-error"></span>
+        <input class="form__input" type="url" id="input-card-link" placeholder="URL de la imagen" name="link" required />
+        <span class="input-error input-card-link-error"></span>
+        <button type="submit" class="form__submit" disabled>Crear</button>
+      </form>
+    </div>
+
+    <!-- Popup para editar perfil -->
+    <div class="popup" id="popup-profile">
+      <div class="popup__overlay"></div>
+      <form class="form popup__form" id="form-profile" novalidate>
+        <img class="popup__close" src="./images/Close_Icon.png" alt="Cerrar ventana" id="close-profile" />
+        <h2 class="form__title">Editar Información</h2>
+        <input type="text" class="form__input" id="input-name" name="name" placeholder="Nombre" minlength="2" maxlength="40" required />
+        <span class="input-error input-name-error"></span>
+        <input type="text" class="form__input" id="input-hobbie" name="hobbie" placeholder="Ocupación" minlength="2" maxlength="200" required />
+        <span class="input-error input-hobbie-error"></span>
+        <button type="submit" class="form__submit" disabled>Guardar</button>
+      </form>
+    </div>
+
+    <!-- Popup de confirmación para eliminar una tarjeta -->
+    <div class="popup" id="popup-delete">
+      <div class="popup__overlay"></div>
+      <form class="form popup__form" id="form-delete" novalidate>
+        <img class="popup__close" src="./images/Close_Icon.png" alt="Cerrar ventana" id="popup__close-delete" />
+        <p class="form__title">¿Estás seguro?</p>
+        <button type="submit" class="form__submit form__delete">Sí</button>
+      </form>
+    </div>
+
+    <!-- Popup para cambiar la foto de perfil -->
+    <div class="popup" id="popup-avatar">
+      <div class="popup__overlay"></div>
+      <form class="form popup__form" id="form-avatar" novalidate>
+        <img class="popup__close" src="./images/Close_Icon.png" alt="Cerrar ventana" id="popup__close-avatar" />
+        <h2 class="form__title">Actualizar foto de perfil</h2>
+        <input type="url" class="form__input" id="input-avatar-url" name="avatar" placeholder="URL de la nueva foto" required />
+        <button type="submit" class="form__submit">Guardar</button>
+      </form>
+    </div>
+
+    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>
