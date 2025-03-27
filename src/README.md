@@ -35,6 +35,6 @@ Con la incorporación del Proyecto 12, Around The U.S se ha conectado a un servi
 El proyecto se ha integrado con el servidor de Around The U.S mediante una API REST, utilizando un token de autenticación para identificar cada usuario. Todas las solicitudes de datos y actualizaciones son gestionadas a través de la clase `Api`, la cual estructura todas las interacciones con el backend de manera organizada y modular.
 
 **Repositorio en GitHub:**
-[Enlace al proyecto en GitHub Pages](https://nikittty.github.io/web_project_around/)
+[Enlace al proyecto en GitHub pages](https://nikittty.github.io/web_project_around/)
 
 **Explora los encantos de Estados Unidos con Around The U.S y descubre todo lo que este diverso país tiene para ofrecer!**

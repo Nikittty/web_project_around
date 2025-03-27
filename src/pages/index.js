@@ -1,11 +1,11 @@
-import { api } from "./api.js";
-import { Card } from "./Card.js";
-import { PopupWithForm } from "./PopupWithForms.js";
-import { PopupWithImage } from "./PopupWithImage.js";
-import { PopupWithConfirmation } from "./PopupWithConfirmation.js";
-import { Section } from "./Section.js";
-import { UserInfo } from "./UserInfo.js";
-import { FormValidator } from "./FormValidator.js";
+import { api } from "../components/api.js";
+import { Card } from "../components/Card.js";
+import { PopupWithForm } from "../components/PopupWithForms.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
+import { Section } from "../components/Section.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { FormValidator } from "../components/FormValidator.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Variables para modificar el perfil
@@ -168,9 +168,9 @@ api
       (cardElement) => {
         deletePopup.open(() => {
           api
-            .removeCard(cardId)
+            .removeCard(cardId) // Llamamos a la API con el ID de la tarjeta
             .then(() => {
-              cardElement.remove();
+              cardElement.remove(); // Eliminamos la tarjeta del DOM si la API responde correctamente
               deletePopup.close();
             })
             .catch((err) => console.error("Error al eliminar tarjeta:", err));
