@@ -16,7 +16,7 @@ export class UserInfo {
 
   // Método público para establecer la nueva información del usuario
   setUserInfo({ name, hobbie }) {
-    console.log("Datos recibidos en setUserInfo:", { name, hobbie });
+    // console.log("Datos recibidos en setUserInfo:", { name, hobbie }); //
     if (name) this._nameElement.textContent = name;
     if (hobbie) this._hobbieElement.textContent = hobbie;
   }
