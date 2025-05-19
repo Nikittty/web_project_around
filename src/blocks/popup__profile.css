@@ -79,7 +79,7 @@
 .popup__close {
   position: absolute;
   overflow: visible;
-  cursor: pointer;
+  cursor: pointer;  /* ← Conserva solo esta */
   background: transparent;
   border: 0;
   display: block;
@@ -94,7 +94,6 @@
   color: white;
   top: -4rem;
   right: -3rem;
-  cursor: pointer;
 }
 
 .popup__close:hover {

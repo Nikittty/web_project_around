@@ -1,4 +1,3 @@
-/* Estilo general del popup */
 .popup {
   position: fixed;
   top: 0;
@@ -21,7 +20,7 @@
 .popup__close {
   position: absolute;
   overflow: visible;
-  cursor: pointer;
+  cursor: pointer;  /* ← Solo una vez */
   background: transparent;
   border: 0;
   display: block;
@@ -36,7 +35,6 @@
   color: white;
   top: -4rem;
   right: -3rem;
-  cursor: pointer;
 }
 
 /* Estilo para la imagen en el popup */
